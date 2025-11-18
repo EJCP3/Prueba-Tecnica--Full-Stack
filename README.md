@@ -6,13 +6,20 @@ Este proyecto consiste en una aplicación Full-Stack diseñada para gestionar pr
 
 🚀 Tecnologías Utilizadas
 
+#### Frontend
 
+- Vue.js
+- Vue Router
+- TailwindCSS 
+- DaisyUI
+- Pinia
 
 
 ⚙️ Configuración del Proyecto
 
-- Instalar dependencias 
-cd Frontend
+- Instalar dependencias
+```bash 
+cd pruebatecnica
 npm install
-- Ejecutar proyecto
 npm run dev
+```
