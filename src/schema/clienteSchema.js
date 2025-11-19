@@ -13,6 +13,7 @@ export const clienteSchema = [
   },
   {
     $formkit: "email",
+    name: "email",
     label: "Escriba el Email",
     inputClass: "input input-bordered w-full",
     outerClass: "mb-4 flex flex-col gap-1",
@@ -25,6 +26,7 @@ export const clienteSchema = [
   },
   {
     $formkit: "tel",
+    name: "telefono",
     label: "Número de teléfono",
     placeholder: "xxx-xxx-xxxx",
     inputClass: "input input-bordered w-full",

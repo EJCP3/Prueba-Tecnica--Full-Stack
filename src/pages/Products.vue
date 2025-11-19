@@ -2,20 +2,29 @@
 import { useProductoStore } from "../stores/producto";
 import { useProductos } from "../composable/useProductos";
 import { productoSchema } from "../schema/productoSchema";
+import { ref } from "vue";
 
 const productoStore = useProductoStore();
+const formRef = ref(null);
+const {
+  producto,
+  editando,
+  handleEdit,
+  saveEdit,
+  handleSubmit,
+  handleRemove,
+} = useProductos(formRef);
 
-const { producto, editando, handleEdit, saveEdit, handleSubmit, handleRemove } =
-  useProductos();
-
-  const onSubmit = (data) => {
+const onSubmit = (data) => {
+  console.log(data);
   if (editando.value) {
-    saveEdit(data);   // ← le pasas los datos editados
+   
+    saveEdit(data);
   } else {
-    handleSubmit(data);   // ← le pasas los datos nuevos
+    handleSubmit(data);
   }
+  formRef.value.node.reset();
 };
-
 </script>
 <template>
   <Navbard />
@@ -65,13 +74,26 @@ const { producto, editando, handleEdit, saveEdit, handleSubmit, handleRemove } =
         </form>
       </fieldset> -->
 
-       <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-      <legend class="fieldset-legend">Productos</legend>
+      <fieldset
+        class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4"
+      >
+        <legend class="fieldset-legend">Productos</legend>
 
-      <FormKit type="form"   @submit="onSubmit" :actions="false"   :value="producto">
-        <FormKitSchema :schema="productoSchema" />
-      </FormKit>
-    </fieldset>
+        <FormKit
+          ref="formRef"
+          id="myForm"
+          type="form"
+          @submit="onSubmit"
+          :actions="false"
+        >
+          <FormKitSchema :schema="productoSchema" />
+          <FormKit
+            inputClass="btn btn-secondary mt-10"
+            type="submit"
+            :label="editando ? 'Editar' : 'Guardar'"
+          />
+        </FormKit>
+      </fieldset>
 
       <div
         class="overflow-x-auto rounded-box border border-base-content/5 bg-base-100"

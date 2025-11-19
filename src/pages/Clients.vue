@@ -1,17 +1,37 @@
 <script setup>
-import { FormKitSchema } from "@formkit/vue";
-import { reactive } from "vue";
 import { clienteSchema } from "../schema/clienteSchema";
+import { useClienteStore } from "../stores/cliente";
+import { useClientes } from "../composable/useClientes";
+import { ref } from "vue";
+import { useCrudForm } from "../composable/useCrudForm";
 
-const cliente = reactive({
+const clienteStore = useClienteStore();
+
+const formRef = ref(null);
+
+const cliente = {
   nombre: "",
   email: "",
   telefono: "",
-});
-
-const handleSubmit = (values) => {
-  console.log("Formulario enviado:", values);
 };
+
+
+const { formData, editId, handleEdit, saveEdit, handleSubmit, handleRemove } =
+  useCrudForm(clienteStore, cliente, formRef, "clientes");
+
+const onSubmit = (data) => {
+  console.log(data);
+  if (editId.value) {
+   
+    saveEdit(data);
+  } else {
+    handleSubmit(data);
+  }
+  formRef.value.node.reset();
+};
+
+
+
 </script>
 
 <template>
@@ -19,19 +39,26 @@ const handleSubmit = (values) => {
   <section class="flex flex-col justify-center items-center mt-20 gap-y-10">
     <h1 class="text-4xl">Crear Clientes</h1>
 
-  <FormKit
-    type="form"
-    @submit="handleSubmit"
-    class="w-96 bg-base-200 p-6 rounded-xl shadow-md"
-    :actions="false"
-  >
-    <FormKitSchema :schema="clienteSchema" />
+    <fieldset
+      class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4"
+    >
+      <legend class="fieldset-legend">Clientes</legend>
 
-    <button class="btn btn-primary mt-4 w-full" type="submit">
-      Agregar
-    </button>
-  </FormKit>
-    
+      <FormKit
+        ref="formRef"
+        id="myForm"
+        type="form"
+        @submit="onSubmit"
+        :actions="false"
+      >
+        <FormKitSchema :schema="clienteSchema" />
+        <FormKit
+          inputClass="btn btn-secondary mt-10"
+          type="submit"
+          :label="editId ? 'Editar' : 'Guardar'"
+        />
+      </FormKit>
+    </fieldset>
 
     <!-- <fieldset
       class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4"
@@ -65,11 +92,23 @@ const handleSubmit = (values) => {
         </thead>
         <tbody>
           <!-- row 1 -->
-          <tr>
-            <th>1</th>
-            <td>pedro</td>
-            <td>pedro@example.com</td>
-            <td>123-456-7890</td>
+          <tr v-for="cliente in clienteStore.clientes" :key="cliente.id">
+            <th>{{ cliente.id }}</th>
+            <td>{{ cliente.nombre }}</td>
+            <td>{{ cliente.email }}</td>
+            <td>{{ cliente.telefono }}</td>
+            <td class="flex gap-x-2">
+              <button class="btn btn-sm btn-info" @click="handleEdit(cliente)">
+                Editar
+              </button>
+
+              <button
+                class="btn btn-sm btn-error"
+                @click="handleRemove(cliente.id)"
+              >
+                Eliminar
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>

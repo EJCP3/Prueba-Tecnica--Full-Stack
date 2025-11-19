@@ -1,7 +1,7 @@
 import { ref } from "vue";
 import { useProductoStore } from "../stores/producto";
 
-export function useProductos() {
+export function useProductos(formRef) {
   const productoStore = useProductoStore();
 
   const editando = ref(null);
@@ -13,25 +13,23 @@ export function useProductos() {
     stock: "",
   });
 
-  const resetForm = () => {
-    producto.value = {
-      nombre: "",
-      descripcion: "",
-      precio: "",
-      stock: "",
-    };
-  };
-
   const handleEdit = (productoEdit) => {
     editando.value = productoEdit.id;
     producto.value = { ...productoEdit };
-   
+
+    formRef.value.node.input({
+      nombre: productoEdit.nombre,
+      descripcion: productoEdit.descripcion,
+      precio: productoEdit.precio,
+      stock: productoEdit.stock,
+    });
   };
 
   const saveEdit = (data) => {
+    console.log("first");
     productoStore.editProducto(editando.value, data);
     editando.value = null;
-    resetForm();
+
   };
 
   const handleSubmit = (data) => {
@@ -41,12 +39,10 @@ export function useProductos() {
     };
 
     productoStore.addProducto(newProducto);
-    resetForm();
   };
 
   const handleRemove = (id) => {
     productoStore.deleteProducto(id);
-    console.log("first")
   };
 
   return {

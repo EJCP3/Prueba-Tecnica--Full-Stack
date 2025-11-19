@@ -1,13 +1,21 @@
 import { defineStore } from "pinia";
 import { reactive } from "vue";
-import { useCrud } from "../composable/useCrud";
+import { useCrudStore } from "../composable/useCrudStore";
 
 
 export const useProductoStore = defineStore("producto", () => {
-  const productos = reactive([]);
+  const productos = reactive([
+    {
+      id:1,
+      nombre:"agua",
+      descripcion:"100ml",
+      precio:"20",
+      stock:"10"
+    }
+  ]);
 
-  const { addItem, deleteItem, editItem } = useCrud({ productos }, "productos");
+  const { addItem, deleteItem, editItem } = useCrudStore({ productos }, "productos");
   
 
-  return { productos , addProducto:addItem, deleteProducto:deleteItem, editProducto:editItem };
+  return { productos ,addItem, deleteItem, editItem };
 });

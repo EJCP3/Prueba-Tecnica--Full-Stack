@@ -65,10 +65,10 @@
     },
 
     // Botón
-    {
-      $formkit: 'submit',
-      label: 'Guardar',
-      inputClass: 'btn btn-primary btn-md mt-4'
-    }
+    // {
+    //   $formkit: 'submit',
+    //   label: 'Guardar',
+    //   inputClass: 'btn btn-primary btn-md mt-4'
+    // }
   ];
 
