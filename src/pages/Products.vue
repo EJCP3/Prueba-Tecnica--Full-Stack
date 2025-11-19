@@ -1,19 +1,28 @@
 <script setup>
-import { reactive, ref } from "vue";
 import { useProductoStore } from "../stores/producto";
 import { useProductos } from "../composable/useProductos";
+import { productoSchema } from "../schema/productoSchema";
 
 const productoStore = useProductoStore();
 
 const { producto, editando, handleEdit, saveEdit, handleSubmit, handleRemove } =
   useProductos();
+
+  const onSubmit = (data) => {
+  if (editando.value) {
+    saveEdit(data);   // ← le pasas los datos editados
+  } else {
+    handleSubmit(data);   // ← le pasas los datos nuevos
+  }
+};
+
 </script>
 <template>
   <Navbard />
   <section class="flex flex-col justify-center items-center mt-20 gap-y-10">
     <h1 class="text-4xl">Crear Productos</h1>
     <div class="flex flex-col md:flex-row gap-x-20">
-      <fieldset
+      <!-- <fieldset
         class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4"
       >
         <legend class="fieldset-legend">Productos</legend>
@@ -54,7 +63,15 @@ const { producto, editando, handleEdit, saveEdit, handleSubmit, handleRemove } =
             {{ editando ? "Guardar Cambios" : "Agregar" }}
           </button>
         </form>
-      </fieldset>
+      </fieldset> -->
+
+       <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+      <legend class="fieldset-legend">Productos</legend>
+
+      <FormKit type="form"   @submit="onSubmit" :actions="false"   :value="producto">
+        <FormKitSchema :schema="productoSchema" />
+      </FormKit>
+    </fieldset>
 
       <div
         class="overflow-x-auto rounded-box border border-base-content/5 bg-base-100"

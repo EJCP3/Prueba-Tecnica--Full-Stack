@@ -1,46 +1,78 @@
+<script setup>
+import { FormKitSchema } from "@formkit/vue";
+import { reactive } from "vue";
+import { clienteSchema } from "../schema/clienteSchema";
+
+const cliente = reactive({
+  nombre: "",
+  email: "",
+  telefono: "",
+});
+
+const handleSubmit = (values) => {
+  console.log("Formulario enviado:", values);
+};
+</script>
+
 <template>
-  <Navbard/>
- <section class="flex flex-col justify-center items-center mt-20 gap-y-10">
-     <h1 class="text-4xl">Crear Clientes</h1>
-  <fieldset
-    class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4"
+  <Navbard />
+  <section class="flex flex-col justify-center items-center mt-20 gap-y-10">
+    <h1 class="text-4xl">Crear Clientes</h1>
+
+  <FormKit
+    type="form"
+    @submit="handleSubmit"
+    class="w-96 bg-base-200 p-6 rounded-xl shadow-md"
+    :actions="false"
   >
-    <legend class="fieldset-legend">Clientes</legend>
+    <FormKitSchema :schema="clienteSchema" />
 
-    <label class="label">Nombre</label>
-    <input type="email" class="input" placeholder="Email" />
+    <button class="btn btn-primary mt-4 w-full" type="submit">
+      Agregar
+    </button>
+  </FormKit>
+    
 
-    <label class="label">Email</label>
-    <input type="password" class="input" placeholder="Password" />
+    <!-- <fieldset
+      class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4"
+    >
+      <legend class="fieldset-legend">Clientes</legend>
 
-       <label class="label">telefono</label>
-    <input type="password" class="input" placeholder="Password" />
+      <label class="label">Nombre</label>
+      <input type="email" class="input" placeholder="Email" />
 
-    <button class="btn btn-neutral mt-4">Agregar</button>
-  </fieldset>
+      <label class="label">Email</label>
+      <input type="password" class="input" placeholder="Password" />
 
-  <div class="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
-  <table class="table">
-    <!-- head -->
-    <thead>
-      <tr>
-        <th></th>
-        <th>Nombre</th>
-        <th>Email</th>
-        <th>Telefono</th>
-      </tr>
-    </thead>
-    <tbody>
-        <!-- row 1 -->
-        <tr>
+      <label class="label">telefono</label>
+      <input type="password" class="input" placeholder="Password" />
+
+      <button class="btn btn-neutral mt-4">Agregar</button>
+    </fieldset> -->
+
+    <div
+      class="overflow-x-auto rounded-box border border-base-content/5 bg-base-100"
+    >
+      <table class="table">
+        <!-- head -->
+        <thead>
+          <tr>
+            <th></th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Telefono</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- row 1 -->
+          <tr>
             <th>1</th>
             <td>pedro</td>
             <td>pedro@example.com</td>
             <td>123-456-7890</td>
-        </tr>
-     
-    </tbody>
-  </table>
-</div>
- </section>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 </template>

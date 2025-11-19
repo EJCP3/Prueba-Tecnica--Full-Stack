@@ -25,18 +25,19 @@ export function useProductos() {
   const handleEdit = (productoEdit) => {
     editando.value = productoEdit.id;
     producto.value = { ...productoEdit };
+   
   };
 
-  const saveEdit = () => {
-    productoStore.editProducto(editando.value, producto.value);
+  const saveEdit = (data) => {
+    productoStore.editProducto(editando.value, data);
     editando.value = null;
     resetForm();
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (data) => {
     const newProducto = {
       id: Date.now(),
-      ...producto.value,
+      ...data,
     };
 
     productoStore.addProducto(newProducto);
@@ -45,6 +46,7 @@ export function useProductos() {
 
   const handleRemove = (id) => {
     productoStore.deleteProducto(id);
+    console.log("first")
   };
 
   return {
