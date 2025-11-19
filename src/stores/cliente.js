@@ -11,6 +11,20 @@ const clientes = reactive([
       email:"pedro@gmail.com",
       telefono:"8054569874"
     
+    },
+      {
+      id:2,
+      nombre:"juan",
+      email:"juan@gmail.com",
+      telefono:"8054569874"
+    
+    },
+      {
+      id:1,
+      nombre:"perez",
+      email:"perez@gmail.com",
+      telefono:"8054569874"
+    
     }
 ]);
 

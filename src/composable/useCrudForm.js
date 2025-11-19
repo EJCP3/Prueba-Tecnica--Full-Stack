@@ -4,7 +4,6 @@ import { useCrudStore } from "./useCrudStore";
 export function useCrudForm(store, initialData, formRef, key) {
 
 
-  console.log(store)
   const editId = ref(null);
   const formData = ref({ ...initialData });
 
