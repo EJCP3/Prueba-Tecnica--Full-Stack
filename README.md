@@ -13,7 +13,7 @@ Este proyecto consiste en una aplicación Full-Stack diseñada para gestionar pr
 - TailwindCSS 
 - DaisyUI
 - Pinia
-
+- Formkit
 
 ⚙️ Configuración del Proyecto
 

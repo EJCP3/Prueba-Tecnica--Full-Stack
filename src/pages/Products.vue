@@ -1,23 +1,28 @@
 <script setup>
 import { useProductoStore } from "../stores/producto";
-import { useProductos } from "../composable/useProductos";
 import { productoSchema } from "../schema/productoSchema";
 import { ref } from "vue";
+import { useCrudForm } from "../composable/useCrudForm";
 
 const productoStore = useProductoStore();
 const formRef = ref(null);
-const {
-  producto,
-  editando,
-  handleEdit,
-  saveEdit,
-  handleSubmit,
-  handleRemove,
-} = useProductos(formRef);
+
+const producto = {
+  nombre: "",
+  descripcion: "",
+  precio: "",
+  stock: "",
+};
+
+const { formData, editId, handleEdit, saveEdit, handleSubmit, handleRemove } =
+  useCrudForm(productoStore, producto, formRef, "productos");
+
+
+
 
 const onSubmit = (data) => {
   console.log(data);
-  if (editando.value) {
+  if (editId.value) {
    
     saveEdit(data);
   } else {
@@ -26,56 +31,19 @@ const onSubmit = (data) => {
   formRef.value.node.reset();
 };
 </script>
+
 <template>
   <Navbard />
-  <section class="flex flex-col justify-center items-center mt-20 gap-y-10">
-    <h1 class="text-4xl">Crear Productos</h1>
-    <div class="flex flex-col md:flex-row gap-x-20">
-      <!-- <fieldset
-        class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4"
-      >
-        <legend class="fieldset-legend">Productos</legend>
-        <form @submit.prevent="editando ? saveEdit() : handleSubmit()">
-          <label class="label">Nombre</label>
-          <input
-            v-model="producto.nombre"
-            type="text"
-            class="input"
-            placeholder="Nombre"
-          />
 
-          <label class="label">Descripcion</label>
-          <input
-            v-model="producto.descripcion"
-            type="text"
-            class="input"
-            placeholder="Descripcion"
-          />
+  <section class="flex flex-col items-center mt-20 gap-10 px-4">
+    <h1 class="text-4xl text-center">Crear Productos</h1>
 
-          <label class="label">Precio</label>
-          <input
-            v-model="producto.precio"
-            type="text"
-            class="input"
-            placeholder="Precio"
-          />
+    <!-- Contenedor responsivo -->
+    <div class="flex flex-col w-full max-w-6xl gap-10 md:flex-row md:items-start">
 
-          <label class="label">Stock</label>
-          <input
-            v-model="producto.stock"
-            type="text"
-            class="input"
-            placeholder="Stock"
-          />
-
-          <button class="btn btn-neutral mt-4">
-            {{ editando ? "Guardar Cambios" : "Agregar" }}
-          </button>
-        </form>
-      </fieldset> -->
-
+      <!-- FORMULARIO -->
       <fieldset
-        class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4"
+        class="fieldset bg-base-200 border-base-300 rounded-box w-full md:w-1/3 border p-4"
       >
         <legend class="fieldset-legend">Productos</legend>
 
@@ -87,46 +55,49 @@ const onSubmit = (data) => {
           :actions="false"
         >
           <FormKitSchema :schema="productoSchema" />
+
           <FormKit
-            inputClass="btn btn-secondary mt-10"
+            inputClass="btn btn-secondary mt-10 w-full"
             type="submit"
-            :label="editando ? 'Editar' : 'Guardar'"
+            :label="editId ? 'Editar' : 'Guardar'"
           />
         </FormKit>
       </fieldset>
 
+      <!-- TABLA RESPONSIVA -->
       <div
-        class="overflow-x-auto rounded-box border border-base-content/5 bg-base-100"
+        class="w-full overflow-x-auto rounded-box border border-base-content/5 bg-base-100"
       >
-        <table class="table">
-          <!-- head -->
+        <table class="table w-full min-w-[600px] md:min-w-full">
           <thead>
             <tr>
               <th>ID</th>
               <th>Nombre</th>
-              <th>Descripcion</th>
+              <th>Descripción</th>
               <th>Precio</th>
               <th>Stock</th>
+              <th>Acciones</th>
             </tr>
           </thead>
+
           <tbody>
-            <!-- row 1 -->
             <tr v-for="producto in productoStore.productos" :key="producto.id">
               <th>{{ producto.id }}</th>
               <td>{{ producto.nombre }}</td>
               <td>{{ producto.descripcion }}</td>
               <td>${{ producto.precio }}</td>
               <td>{{ producto.stock }}</td>
-              <td class="flex gap-x-2">
+
+              <td class="flex flex-col gap-2 md:flex-row">
                 <button
-                  class="btn btn-sm btn-info"
+                  class="btn btn-sm btn-info w-full md:w-auto"
                   @click="handleEdit(producto)"
                 >
                   Editar
                 </button>
 
                 <button
-                  class="btn btn-sm btn-error"
+                  class="btn btn-sm btn-error w-full md:w-auto"
                   @click="handleRemove(producto.id)"
                 >
                   Eliminar
@@ -136,6 +107,7 @@ const onSubmit = (data) => {
           </tbody>
         </table>
       </div>
+
     </div>
   </section>
 </template>

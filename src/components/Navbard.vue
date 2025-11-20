@@ -3,7 +3,7 @@ import { ref } from "vue";
 </script>
 
 <template class="">
-  <div class="navbar bg-base-100 shadow-sm">
+  <div class="navbar bg-base-100 shadow-sm z-10 ">
     <div class="flex-1">
       <router-link to="/" class="btn btn-ghost text-xl">Panel</router-link>
     </div>

@@ -1,11 +1,11 @@
 <script setup>
 import { clienteSchema } from "../schema/clienteSchema";
 import { useClienteStore } from "../stores/cliente";
-import { useClientes } from "../composable/useClientes";
 import { ref } from "vue";
 import { useCrudForm } from "../composable/useCrudForm";
-
 const clienteStore = useClienteStore();
+
+
 
 const formRef = ref(null);
 
@@ -15,89 +15,84 @@ const cliente = {
   telefono: "",
 };
 
-
 const { formData, editId, handleEdit, saveEdit, handleSubmit, handleRemove } =
   useCrudForm(clienteStore, cliente, formRef, "clientes");
 
 const onSubmit = (data) => {
+  
   console.log(data);
   if (editId.value) {
-   
     saveEdit(data);
   } else {
     handleSubmit(data);
   }
   formRef.value.node.reset();
 };
-
-
-
 </script>
 
 <template>
   <Navbard />
-  <section class="flex flex-col justify-center items-center mt-20 gap-y-10">
-    <h1 class="text-4xl">Crear Clientes</h1>
 
+  <section
+    class="flex flex-col justify-center items-center mt-20 px-4 gap-y-10"
+  >
+    <h1 class="text-3xl md:text-4xl font-bold text-center">Crear Clientes</h1>
+
+    <!-- FORMULARIO -->
     <fieldset
-      class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4"
+      class="fieldset bg-base-200 border border-base-300 rounded-xl w-full max-w-md p-6 shadow"
     >
-      <legend class="fieldset-legend">Clientes</legend>
+      <legend class="fieldset-legend text-lg font-bold text-primary">
+        Clientes
+      </legend>
 
       <FormKit
         ref="formRef"
         id="myForm"
         type="form"
+       
         @submit="onSubmit"
         :actions="false"
       >
         <FormKitSchema :schema="clienteSchema" />
+
         <FormKit
-          inputClass="btn btn-secondary mt-10"
+          inputClass="btn btn-primary w-full mt-6"
           type="submit"
           :label="editId ? 'Editar' : 'Guardar'"
         />
       </FormKit>
     </fieldset>
 
-    <!-- <fieldset
-      class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4"
-    >
-      <legend class="fieldset-legend">Clientes</legend>
+  
 
-      <label class="label">Nombre</label>
-      <input type="email" class="input" placeholder="Email" />
-
-      <label class="label">Email</label>
-      <input type="password" class="input" placeholder="Password" />
-
-      <label class="label">telefono</label>
-      <input type="password" class="input" placeholder="Password" />
-
-      <button class="btn btn-neutral mt-4">Agregar</button>
-    </fieldset> -->
-
+    <!-- TABLA -->
     <div
-      class="overflow-x-auto rounded-box border border-base-content/5 bg-base-100"
+      class="overflow-x-auto rounded-xl border border-base-content/10 bg-base-100 w-full max-w-4xl shadow"
     >
-      <table class="table">
-        <!-- head -->
+      <table class="table table-zebra">
         <thead>
-          <tr>
-            <th></th>
+          <tr class="text-sm md:text-base">
+            <th>ID</th>
             <th>Nombre</th>
             <th>Email</th>
             <th>Telefono</th>
+            <th>Acciones</th>
           </tr>
         </thead>
+
         <tbody>
-          <!-- row 1 -->
-          <tr v-for="cliente in clienteStore.clientes" :key="cliente.id">
-            <th>{{ cliente.id }}</th>
+          <tr
+            v-for="cliente in clienteStore.clientes"
+            :key="cliente.id"
+            class="text-sm md:text-base"
+          >
+            <td>{{ cliente.id }}</td>
             <td>{{ cliente.nombre }}</td>
             <td>{{ cliente.email }}</td>
             <td>{{ cliente.telefono }}</td>
-            <td class="flex gap-x-2">
+
+            <td class="flex gap-2">
               <button class="btn btn-sm btn-info" @click="handleEdit(cliente)">
                 Editar
               </button>
