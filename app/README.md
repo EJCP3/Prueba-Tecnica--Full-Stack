@@ -1,11 +1,10 @@
-# Fronted - Vue.js
+# Fronted
 
-📌 Descripción del Frontend
+📌 Descripción del Frotend
+
 
 
 🚀 Tecnologías Utilizadas
-
-#### Frontend
 
 - Vue.js
 - Vue Router

@@ -1,11 +1,10 @@
-# Backend - .Net
+# Backend 
 
 📌 Descripción del Backend
 
 
 🚀 Tecnologías Utilizadas
 
-#### Backend
 
 - 
 - 
