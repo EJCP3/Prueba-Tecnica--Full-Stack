@@ -1,0 +1,19 @@
+﻿{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "jwt": {
+    "Key": "EstaEsUnaClaveMuyLargaParaGenerarElTokenDeAutenticacion",
+    "Issuer": "https://localhost:7283/",
+    "Audience": "https://localhost:7283/",
+    "subject": "InventarioApiAccessToken"
+  },
+  "ConnectionStrings": {
+
+    "Connection": "Server=localhost;Database=InventarioApi;Trusted_Connection=True;TrustServerCertificate=True;"
+  }
+}
