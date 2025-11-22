@@ -2,6 +2,16 @@
 {
     public class ValidationException : Exception
     {
-        public ValidationException(string message) : base(message) { }
+        public Dictionary<string, string[]> Errors { get; }
+
+        public ValidationException(Dictionary<string, string[]> errors)
+            : base("Errores de validación")
+        {
+            Errors = errors;
+        }
+
+        public ValidationException(string? message) : base(message)
+        {
+        }
     }
 }

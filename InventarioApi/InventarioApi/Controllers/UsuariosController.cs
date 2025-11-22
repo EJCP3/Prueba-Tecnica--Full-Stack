@@ -1,14 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 using InventarioApi.Context;
 using InventarioApi.Models;
 using InventarioApi.DTOs;
-using InventarioApi.Exceptions; // 👈 NECESARIO
+using InventarioApi.Exceptions;
 
 namespace InventarioApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "admin")]  // 👈 SOLO ADMIN
     public class UsuariosController : ControllerBase
     {
         private readonly AppDbContext _context;
@@ -27,8 +29,8 @@ namespace InventarioApi.Controllers
                 {
                     ID = u.ID,
                     Nombre = u.Nombre,
-                    Email = u.Email,
-                    Password = u.PasswordHash,
+                    Email = u.Email
+                    // ❌ Nunca retornes PasswordHash!
                 })
                 .ToListAsync();
         }
@@ -46,8 +48,7 @@ namespace InventarioApi.Controllers
             {
                 ID = usuario.ID,
                 Nombre = usuario.Nombre,
-                Email = usuario.Email,
-                Password = usuario.PasswordHash,
+                Email = usuario.Email
             };
         }
 
@@ -65,6 +66,10 @@ namespace InventarioApi.Controllers
             if (existe)
                 throw new BadRequestException("Ya existe un usuario con ese email.");
 
+            // ⚠ IMPORTANTE: asegurar que tenga un ROL
+            if (string.IsNullOrWhiteSpace(usuario.Rol))
+                usuario.Rol = "user";
+
             _context.Usuarios.Add(usuario);
             await _context.SaveChangesAsync();
 
@@ -72,8 +77,7 @@ namespace InventarioApi.Controllers
             {
                 ID = usuario.ID,
                 Nombre = usuario.Nombre,
-                Email = usuario.Email,
-                Password = usuario.PasswordHash,
+                Email = usuario.Email
             };
 
             return CreatedAtAction(nameof(GetUsuario), new { id = usuario.ID }, dto);
@@ -90,7 +94,13 @@ namespace InventarioApi.Controllers
             if (!existe)
                 throw new NotFoundException("El usuario no existe.");
 
-            _context.Entry(usuario).State = EntityState.Modified;
+            // ⚠ Evitar cambios de contraseña aquí accidentalmente
+            var usuarioDb = await _context.Usuarios.FindAsync(id);
+
+            usuarioDb.Nombre = usuario.Nombre;
+            usuarioDb.Email = usuario.Email;
+            usuarioDb.Rol = usuario.Rol;  // solo admin puede cambiarlo
+
             await _context.SaveChangesAsync();
 
             return NoContent();

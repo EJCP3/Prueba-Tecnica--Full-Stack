@@ -1,6 +1,6 @@
 ﻿using InventarioApi.Context;
 using InventarioApi.DTOs;
-using InventarioApi.Exceptions; // 👈 IMPORTANTE
+using InventarioApi.Exceptions;
 using InventarioApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -22,6 +22,7 @@ namespace InventarioApi.Controllers
 
         // GET: api/Productos
         [HttpGet]
+        [Authorize(Roles = "admin,user")] // 👈 Ambos pueden ver
         public async Task<IEnumerable<ProductoDto>> GetProductos()
         {
             return await _context.Productos
@@ -38,6 +39,7 @@ namespace InventarioApi.Controllers
 
         // GET: api/Productos/5
         [HttpGet("{id}")]
+        [Authorize(Roles = "admin,user")] // 👈 Ambos pueden ver
         public async Task<ProductoDto> GetProducto(int id)
         {
             var producto = await _context.Productos
@@ -60,9 +62,9 @@ namespace InventarioApi.Controllers
 
         // POST: api/Productos
         [HttpPost]
+        [Authorize(Roles = "admin,user")] // 👈 Solo admin crea
         public async Task<ProductoDto> PostProducto(ProductoDto productoDto)
         {
-            // Validaciones rápidas
             if (string.IsNullOrWhiteSpace(productoDto.Nombre))
                 throw new ValidationException("El nombre del producto es obligatorio.");
 
@@ -87,6 +89,7 @@ namespace InventarioApi.Controllers
 
         // PUT: api/Productos/5
         [HttpPut("{id}")]
+        [Authorize(Roles = "admin")] // 👈 Solo admin edita
         public async Task<IActionResult> PutProducto(int id, ProductoDto productoDto)
         {
             if (id != productoDto.Id)
@@ -110,6 +113,7 @@ namespace InventarioApi.Controllers
 
         // DELETE: api/Productos/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")] // 👈 Solo admin borra
         public async Task<IActionResult> DeleteProducto(int id)
         {
             var producto = await _context.Productos.FindAsync(id);

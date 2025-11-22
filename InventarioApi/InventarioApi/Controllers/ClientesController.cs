@@ -1,14 +1,15 @@
 ﻿using InventarioApi.Context;
 using InventarioApi.DTOs;
-using InventarioApi.Exceptions; // 👈 IMPORTANTE
+using InventarioApi.Exceptions;
 using InventarioApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace InventarioApi.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
+    [Authorize] // 👈 Requiere JWT siempre
     [ApiController]
     public class ClientesController : ControllerBase
     {
@@ -21,6 +22,7 @@ namespace InventarioApi.Controllers
 
         // GET: api/Clientes
         [HttpGet]
+        [Authorize(Roles = "admin,user")] // 👈 ambos pueden ver
         public async Task<IEnumerable<ClienteDto>> GetClientes()
         {
             return await _context.Clientes
@@ -36,6 +38,7 @@ namespace InventarioApi.Controllers
 
         // GET: api/Clientes/5
         [HttpGet("{id}")]
+        [Authorize(Roles = "admin,user")] // 👈 ambos pueden ver
         public async Task<ClienteDto> GetCliente(int id)
         {
             var cliente = await _context.Clientes
@@ -57,6 +60,7 @@ namespace InventarioApi.Controllers
 
         // POST: api/Clientes
         [HttpPost]
+        [Authorize(Roles = "admin,user")] // 👈 solo admin crea
         public async Task<ActionResult<ClienteDto>> PostCliente(ClienteDto dto)
         {
             if (string.IsNullOrWhiteSpace(dto.Nombre))
@@ -82,6 +86,7 @@ namespace InventarioApi.Controllers
 
         // PUT: api/Clientes/5
         [HttpPut("{id}")]
+        [Authorize(Roles = "admin")] // 👈 solo admin edita
         public async Task<IActionResult> PutCliente(int id, ClienteDto dto)
         {
             if (id != dto.Id)
@@ -97,7 +102,6 @@ namespace InventarioApi.Controllers
             cliente.Telefono = dto.Telefono;
 
             _context.Entry(cliente).State = EntityState.Modified;
-
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -105,6 +109,7 @@ namespace InventarioApi.Controllers
 
         // DELETE: api/Clientes/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")] // 👈 solo admin elimina
         public async Task<IActionResult> DeleteCliente(int id)
         {
             var cliente = await _context.Clientes.FindAsync(id);

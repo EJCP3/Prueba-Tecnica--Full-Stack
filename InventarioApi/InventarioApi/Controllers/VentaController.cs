@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore;
 namespace InventarioApi.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
     [ApiController]
+    [Authorize] // Autenticado obligatorio
     public class VentasController : ControllerBase
     {
         private readonly AppDbContext _context;
@@ -20,7 +20,9 @@ namespace InventarioApi.Controllers
         }
 
         // GET: api/Ventas
+        // Pueden ver admin y user
         [HttpGet]
+        [Authorize(Roles = "admin,user")]
         public async Task<ActionResult<IEnumerable<object>>> GetVentas()
         {
             var ventas = await _context.Ventas
@@ -54,11 +56,13 @@ namespace InventarioApi.Controllers
 
         // GET: api/Ventas/5
         [HttpGet("{id}")]
+        [Authorize(Roles = "admin,user")]
         public async Task<ActionResult<VentaDto>> GetVenta(int id)
         {
             var venta = await _context.Ventas
                 .Include(v => v.Cliente)
                 .Include(v => v.Detalles)
+                    .ThenInclude(d => d.Productos)
                 .FirstOrDefaultAsync(v => v.ID == id);
 
             if (venta == null)
@@ -81,6 +85,7 @@ namespace InventarioApi.Controllers
                 Detalles = venta.Detalles.Select(d => new VentaDetallaDto
                 {
                     ProductoID = d.ProductoID,
+                    NombreProducto = d.Productos.Nombre,
                     Cantidad = d.Cantidad,
                     Precio = d.Precio
                 }).ToList()
@@ -90,17 +95,17 @@ namespace InventarioApi.Controllers
         }
 
         // POST: api/Ventas
+        // Solo admin puede crear ventas
         [HttpPost]
+        [Authorize(Roles = "admin,user")]
         public async Task<ActionResult> CrearVenta(VentaDto modelo)
         {
-            // Crear entidad de venta
             var venta = new Ventas
             {
                 Fecha = modelo.Fecha,
                 ClienteID = modelo.Cliente.Id,
             };
 
-            // Agregar detalles
             foreach (var item in modelo.Detalles)
             {
                 venta.Detalles.Add(new VentaDetalle
@@ -111,7 +116,6 @@ namespace InventarioApi.Controllers
                 });
             }
 
-            // Calcular total
             venta.Total = venta.Detalles.Sum(d => d.Cantidad * d.Precio);
 
             _context.Ventas.Add(venta);
@@ -121,7 +125,9 @@ namespace InventarioApi.Controllers
         }
 
         // DELETE: api/Ventas/5
+        // Solo admin puede eliminar ventas
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> DeleteVenta(int id)
         {
             var venta = await _context.Ventas

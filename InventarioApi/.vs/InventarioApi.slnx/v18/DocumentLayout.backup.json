@@ -3,6 +3,38 @@
   "WorkspaceRootPath": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F87104DD-B194-4E8E-967B-7CF9DD0F13EA}|InventarioApiTests\\InventarioApiTests.csproj|c:\\users\\euddy\\desktop\\pruebatecnica\\inventarioapi\\inventarioapitests\\unit\\errorhandlermiddlewaretests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F87104DD-B194-4E8E-967B-7CF9DD0F13EA}|InventarioApiTests\\InventarioApiTests.csproj|solutionrelative:inventarioapitests\\unit\\errorhandlermiddlewaretests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F87104DD-B194-4E8E-967B-7CF9DD0F13EA}|InventarioApiTests\\InventarioApiTests.csproj|c:\\users\\euddy\\desktop\\pruebatecnica\\inventarioapi\\inventarioapitests\\unit\\utilidadestests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F87104DD-B194-4E8E-967B-7CF9DD0F13EA}|InventarioApiTests\\InventarioApiTests.csproj|solutionrelative:inventarioapitests\\unit\\utilidadestests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|c:\\users\\euddy\\desktop\\pruebatecnica\\inventarioapi\\inventarioapi\\custom\\ultidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|solutionrelative:inventarioapi\\custom\\ultidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|c:\\users\\euddy\\desktop\\pruebatecnica\\inventarioapi\\inventarioapi\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|solutionrelative:inventarioapi\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|c:\\users\\euddy\\desktop\\pruebatecnica\\inventarioapi\\inventarioapi\\exceptions\\validationexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|solutionrelative:inventarioapi\\exceptions\\validationexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|c:\\users\\euddy\\desktop\\pruebatecnica\\inventarioapi\\inventarioapi\\middlewares\\errorhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|solutionrelative:inventarioapi\\middlewares\\errorhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F87104DD-B194-4E8E-967B-7CF9DD0F13EA}|InventarioApiTests\\InventarioApiTests.csproj|c:\\users\\euddy\\desktop\\pruebatecnica\\inventarioapi\\inventarioapitests\\inventarioapitests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F87104DD-B194-4E8E-967B-7CF9DD0F13EA}|InventarioApiTests\\InventarioApiTests.csproj|solutionrelative:inventarioapitests\\inventarioapitests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|c:\\users\\euddy\\desktop\\pruebatecnica\\inventarioapi\\inventarioapi\\inventarioapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|solutionrelative:inventarioapi\\inventarioapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|c:\\users\\euddy\\desktop\\pruebatecnica\\inventarioapi\\inventarioapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|solutionrelative:inventarioapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -14,19 +46,123 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AccesoController.cs",
+              "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Controllers\\AccesoController.cs",
+              "RelativeDocumentMoniker": "InventarioApi\\Controllers\\AccesoController.cs",
+              "ToolTip": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Controllers\\AccesoController.cs",
+              "RelativeToolTip": "InventarioApi\\Controllers\\AccesoController.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAkwFQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T21:47:17.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ErrorHandlerMiddlewareTests.cs",
+              "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApiTests\\Unit\\ErrorHandlerMiddlewareTests.cs",
+              "RelativeDocumentMoniker": "InventarioApiTests\\Unit\\ErrorHandlerMiddlewareTests.cs",
+              "ToolTip": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApiTests\\Unit\\ErrorHandlerMiddlewareTests.cs",
+              "RelativeToolTip": "InventarioApiTests\\Unit\\ErrorHandlerMiddlewareTests.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAewCoAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T21:43:06.365Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Ultidades.cs",
+              "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Custom\\Ultidades.cs",
+              "RelativeDocumentMoniker": "InventarioApi\\Custom\\Ultidades.cs",
+              "ToolTip": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Custom\\Ultidades.cs",
+              "RelativeToolTip": "InventarioApi\\Custom\\Ultidades.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAmwD8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T21:30:50.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UtilidadesTests.cs",
+              "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApiTests\\Unit\\UtilidadesTests.cs",
+              "RelativeDocumentMoniker": "InventarioApiTests\\Unit\\UtilidadesTests.cs",
+              "ToolTip": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApiTests\\Unit\\UtilidadesTests.cs",
+              "RelativeToolTip": "InventarioApiTests\\Unit\\UtilidadesTests.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAUwC8AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T21:29:51.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ValidationException.cs",
+              "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Exceptions\\ValidationException.cs",
+              "RelativeDocumentMoniker": "InventarioApi\\Exceptions\\ValidationException.cs",
+              "ToolTip": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Exceptions\\ValidationException.cs",
+              "RelativeToolTip": "InventarioApi\\Exceptions\\ValidationException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T21:46:30.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ErrorHandlerMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Middlewares\\ErrorHandlerMiddleware.cs",
+              "RelativeDocumentMoniker": "InventarioApi\\Middlewares\\ErrorHandlerMiddleware.cs",
+              "ToolTip": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Middlewares\\ErrorHandlerMiddleware.cs",
+              "RelativeToolTip": "InventarioApi\\Middlewares\\ErrorHandlerMiddleware.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAuwFIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T21:40:37.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "InventarioApiTests",
+              "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApiTests\\InventarioApiTests.csproj",
+              "RelativeDocumentMoniker": "InventarioApiTests\\InventarioApiTests.csproj",
+              "ToolTip": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApiTests\\InventarioApiTests.csproj",
+              "RelativeToolTip": "InventarioApiTests\\InventarioApiTests.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-22T21:37:46.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "InventarioApi",
+              "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\InventarioApi.csproj",
+              "RelativeDocumentMoniker": "InventarioApi\\InventarioApi.csproj",
+              "ToolTip": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\InventarioApi.csproj",
+              "RelativeToolTip": "InventarioApi\\InventarioApi.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-22T21:31:28.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Program.cs",
               "RelativeDocumentMoniker": "InventarioApi\\Program.cs",
               "ToolTip": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Program.cs",
               "RelativeToolTip": "InventarioApi\\Program.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAiwBgAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T00:15:56.462Z",
+              "WhenOpened": "2025-11-22T21:37:26.927Z",
               "EditorCaption": ""
             }
           ]

@@ -9,7 +9,6 @@ using InventarioApi.Exceptions; // 👈 IMPORTANTE
 namespace InventarioApi.Controllers
 {
     [Route("api/[controller]")]
-    [AllowAnonymous]
     [ApiController]
     public class AccesoController : ControllerBase
     {
@@ -45,7 +44,7 @@ namespace InventarioApi.Controllers
                 Nombre = dto.Nombre,
                 Email = dto.Email,
                 Username = dto.Username,
-                Rol = "Empleado",
+                Rol = "user",
                 FechaCreacion = DateTime.Now,
                 PasswordHash = _ultidades.encriptarSHA256(dto.PasswordHash)
             };
@@ -57,6 +56,7 @@ namespace InventarioApi.Controllers
         }
 
         // POST: api/Acceso/Login
+        [AllowAnonymous]
         [HttpPost("Login")]
         public async Task<IActionResult> Login([FromBody] UsuarioDto dto)
         {
