@@ -44,8 +44,8 @@ namespace InventarioApi.Controllers
                 Nombre = dto.Nombre,
                 Email = dto.Email,
                 Username = dto.Username,
-                Rol = "user",
                 FechaCreacion = DateTime.Now,
+                Rol = "user",
                 PasswordHash = _ultidades.encriptarSHA256(dto.PasswordHash)
             };
 

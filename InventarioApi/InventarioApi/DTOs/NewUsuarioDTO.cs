@@ -14,7 +14,6 @@
 
         public string PasswordHash { get; set; } = string.Empty;
 
-        public string Rol { get; set; } = "Empleado";
 
         // Fecha de creación del usuario
         public DateTime FechaCreacion { get; set; } = DateTime.Now;

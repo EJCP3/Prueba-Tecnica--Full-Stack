@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cu0VehYIKyA=",
+  "dgSpecHash": "nCOnglrtcXk=",
   "success": true,
   "projectFilePath": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApiTests\\InventarioApiTests.csproj",
   "expectedPackageFiles": [
@@ -187,7 +187,7 @@
     {
       "code": "NU1903",
       "level": "Warning",
-      "message": "El paquete \"Microsoft.Build\" 17.10.4 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq",
+      "message": "Package 'Microsoft.Build' 17.10.4 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq",
       "projectPath": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApiTests\\InventarioApiTests.csproj",
       "warningLevel": 1,
       "filePath": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApiTests\\InventarioApiTests.csproj",

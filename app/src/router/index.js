@@ -1,39 +1,39 @@
-import { createWebHistory } from "vue-router";
-import { createRouter } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
+import { useAuthStore } from "../stores/auth";
+
+import MainLayout from "../layouts/MainLayout.vue";
 import Home from "../pages/Home.vue";
-import Clients from "../pages/Clients.vue";
-import Products from "../pages/Products.vue";
-import Ventas from "../pages/Ventas.vue";
-import Historial from "../pages/Historial.vue";
+import Productos from "../pages/Products.vue";
+import Login from "../pages/Login.vue";
+
+const routes = [
+  {
+    path: "/login",
+    component: Login,
+  },
+  {
+    path: "/",
+    component: MainLayout,
+    meta: { requiresAuth: true },
+    children: [
+      { path: "", component: Home },
+      { path: "productos", component: Productos },
+    ],
+  },
+];
 
 const router = createRouter({
-    history: createWebHistory(),
-    routes:[
-        {
-        path: "/",
-        name: "home",
-        component: Home
-    },
-  {
-        path: "/clientes",
-        name: "clientes",
-        component: Clients
-    },
-  {
-        path: "/productos",
-        name: "productos",
-        component: Products
-    },
-  {
-        path: "/ventas",
-        name: "ventas",
-        component : Ventas
-    },
-  {
-        path: "/historial",
-        name: "historial",
-        component: Historial
-    }]
-})
+  history: createWebHistory(),
+  routes,
+});
+
+// Middleware: protege rutas
+router.beforeEach((to) => {
+  const auth = useAuthStore();
+
+  if (to.meta.requiresAuth && !auth.token) {
+    return "/login";
+  }
+});
 
 export default router;
