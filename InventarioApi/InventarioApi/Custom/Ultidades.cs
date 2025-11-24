@@ -44,6 +44,7 @@ namespace InventarioApi.Custom
                new Claim(ClaimTypes.NameIdentifier, modelo.ID.ToString()),
                new Claim(ClaimTypes.Email, modelo.Email!),
                 new Claim(ClaimTypes.Name, modelo.Nombre!),
+                        new Claim(ClaimTypes.Role, modelo.Rol)  // 👈 AGREGAR EL ROL
 
             };
 

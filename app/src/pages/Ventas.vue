@@ -1,76 +1,26 @@
 <script setup>
-import { date } from "../logic/date";
-import { useClienteStore } from "../stores/cliente";
-const clienteStore = useClienteStore();
-const clientes = clienteStore.clientes;
-import { useProductoStore } from "../stores/producto";
-const productoStore = useProductoStore();
-const productos = productoStore.productos;
-import { ref, computed } from "vue";
-import { useVentaStore } from "../stores/venta";
+import { useVentaForm } from "../composable/useVentaForm";
 import ModalError from "../components/ModalError.vue";
 
-const carrito = ref([]);
-const formRef = ref(null);
-
-const ventaStore = useVentaStore();
-const showErrorModal = ref(false);
-
-const onInvalid = () => {
-  showErrorModal.value = true;
-};
-
-const addToCart = (producto) => {
-  const existe = carrito.value.find((p) => p.id === producto.id);
-
-  if (existe) {
-    existe.cantidad++;
-  } else {
-    carrito.value.push({
-      ...producto,
-      cantidad: 1,
-    });
-  }
-};
-
-const removeFromCart = (id) => {
-  carrito.value = carrito.value.filter((p) => p.id !== id);
-};
-
-const total = computed(() =>
-  carrito.value.reduce((sum, p) => sum + p.precio * p.cantidad, 0)
-);
-
-const handleSubmit = (data) => {
-   if (carrito.value.length === 0) {
-    onInvalid();
-    return;
-  }
-  const ventaData = {
-    cliente: data.cliente,
-    listaProductos: carrito.value.map((p) => ({
-      id: p.id,
-      nombre: p.nombre,
-      precio: p.precio,
-      cantidad: p.cantidad,
-    })),
-    total: total.value,
-  };
-
-  ventaStore.addVentas(ventaData);
-  carrito.value = [];
-  formRef.value.node.reset();
-
-};
+const {
+  clientes,
+  productos,
+  carrito,
+  total,
+  formRef,
+  showErrorModal,
+  addToCart,
+  removeFromCart,
+  onInvalid,
+  handleSubmit
+} = useVentaForm();
 </script>
 
+
 <template>
-  <Navbard />
 
   <section class="flex flex-col justify-center items-center mt-20 px-4">
-    <h1 class="text-3xl md:text-4xl font-bold text-center">
-      Registrar Ventas
-    </h1>
+    <h1 class="text-3xl md:text-4xl font-bold text-center">Registrar Ventas</h1>
 
     <fieldset
       class="fieldset bg-base-200 border border-base-300 rounded-xl shadow-md w-full max-w-xl p-6 mt-6"
@@ -87,7 +37,7 @@ const handleSubmit = (data) => {
         @invalid="onInvalid"
         :actions="false"
       >
-        <!-- CLIENTE -->
+     
         <div class="mb-4">
           <FormKit
             type="select"
@@ -107,7 +57,7 @@ const handleSubmit = (data) => {
           />
         </div>
 
-        <!-- PRODUCTOS -->
+       
         <h2 class="text-lg font-bold mt-4 mb-2">Productos</h2>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -130,10 +80,10 @@ const handleSubmit = (data) => {
           </div>
         </div>
 
-        <!-- LISTA (CARRITO) -->
+       
         <h2 class="text-lg font-bold mt-6">Lista</h2>
 
-        <!-- VALIDACIÓN: carrito vacío -->
+      
         <p v-if="carrito.length === 0" class="text-error text-sm mb-2">
           Debes agregar al menos un producto.
         </p>
@@ -170,7 +120,7 @@ const handleSubmit = (data) => {
           </div>
         </div>
 
-        <!-- TOTAL -->
+      
         <div
           class="p-3 mt-4 bg-base-300 rounded-lg text-right font-semibold text-xl"
         >
@@ -178,7 +128,7 @@ const handleSubmit = (data) => {
           <span class="text-primary">${{ total }}</span>
         </div>
 
-        <!-- BOTÓN -->
+ 
         <FormKit
           inputClass="btn btn-primary w-full mt-6"
           type="submit"
@@ -187,10 +137,11 @@ const handleSubmit = (data) => {
       </FormKit>
     </fieldset>
   </section>
-    <ModalError
+
+
+  <ModalError
     v-model="showErrorModal"
     title="Formulario incompleto"
     message="Por favor completa todos los campos obligatorios."
   />
 </template>
-

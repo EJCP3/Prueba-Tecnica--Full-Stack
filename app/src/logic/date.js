@@ -3,14 +3,14 @@ import { ref } from "vue";
 export function date() {
   const fecha = ref(new Date());
 
-  const dia = ref(fecha.value.getDate()); // Día del mes (1-31)
-  const mes = ref(fecha.value.getMonth() + 1); // Mes (0-11, por eso +1)
-  const anio = ref(fecha.value.getFullYear()); // Año completo
-  const hora = ref(fecha.value.getHours()); // Hora (0-23)
+  const dia = ref(fecha.value.getDate()); 
+  const mes = ref(fecha.value.getMonth() + 1);
+  const anio = ref(fecha.value.getFullYear()); 
+  const hora = ref(fecha.value.getHours()); 
   const minutos = ref(fecha.value.getMinutes());
-  const segundo = ref(fecha.value.getSeconds()) // Minutos (0-59)
+  const segundo = ref(fecha.value.getSeconds()) 
 
-  // Para mostrarlo en un formato tipo "dd/mm/yyyy hh:mm"
+  // Para mostrar la fecha en un  formato tipo "dd/mm/yyyy hh:mm"
   const fechaFormateada = ref(
     `${dia.value.toString().padStart(2, "0")}/` +
       `${mes.value.toString().padStart(2, "0")}/` +

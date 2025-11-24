@@ -3,23 +3,27 @@ import { ref } from "vue";
 import { useAuthStore } from "../stores/auth";
 import { useRouter } from "vue-router";
 
-const email = ref("");
-const nombre = ref("");
-const password = ref("");
-const error = ref("");
-
 const auth = useAuthStore();
 const router = useRouter();
 
-const handleLogin = async () => {
-  const ok = await auth.login(nombre.value, email.value, password.value,);
-  console.log(nombre.value, email.value, password.value,)
+const error = ref("");
+const loading = ref(false);
+
+// ⬇ FormKit manda los valores aquí
+const handleLogin = async (data) => {
+  loading.value = true;
+  error.value = "";
+
+  const ok = await auth.login(data.nombre, data.email, data.password);
+
+  loading.value = false;
+
   if (!ok) {
     error.value = "Credenciales incorrectas";
     return;
   }
 
-  router.push("/"); // redirige al home
+  router.push("/");
 };
 </script>
 
@@ -30,56 +34,80 @@ const handleLogin = async () => {
     <section
       class="flex flex-col justify-center items-center relative z-10 h-full"
     >
-      <div class="bg-base-200 rounded-2xl max-w-xs w-full mx-4">
-        <h1 class="text-center pt-8 text-2xl font-bold">Datos de acceso</h1>
+     
+   <fieldset
+    class="fieldset bg-base-200 border border-base-300 rounded-xl w-full max-w-md p-6 shadow"
+  >
+    <legend class="fieldset-legend text-lg font-bold text-warning">
+      Iniciar Sesión
+    </legend>
 
-        <form
-          @submit.prevent="handleLogin"
-          class="p-8 rounded-lg shadow-lg z-10"
-        >
-          <div class="mb-4">
-            <label for="nombre" class="block font-bold mb-2">nombre:</label>
-            <input
-              type="text"
-              id="nombre"
-              v-model="nombre"
-              required
-              class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-<div class="mb-6">
-            <label for="password" class="block font-bold mb-2"
-              >Email:</label
-            >
-             <input
-            v-model="email"
-            type="email"
-            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          </div>
-          
-        
-          <div class="mb-6">
-            <label for="password" class="block font-bold mb-2"
-              >Contraseña:</label
-            >
-            <input
-              type="text"
-              id="password"
-              v-model="password"
-              required
-              class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-          <button
-            type="submit"
-            class="w-full bg-primary text-primary-content font-bold py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300"
-          >
-            Acceder
-          </button>
-              <p v-if="error" class="text-red-500 mt-3">{{ error }}</p>
-        </form>
-      </div>
+    <FormKit
+      type="form"
+      :actions="false"
+      @submit="handleLogin"
+      form-class="flex flex-col gap-4"
+  incomplete-message="Por favor completa los campos."   
+   >
+      <!-- Nombre -->
+      <FormKit
+        type="text"
+        name="nombre"
+        label="Nombre"
+        v-model="nombre"
+        validation="required"
+        placeholder="Ingresa tu nombre"
+        outerClass="flex flex-col gap-1"
+        labelClass="font-semibold text-warning"
+        inputClass="w-full px-3 py-2 rounded-md bg-base-100 shadow-sm focus:outline-none focus:ring-2 focus:ring-warning transition-all"
+      />
+
+      <!-- Email -->
+      <FormKit
+        type="email"
+        name="email"
+        label="Email"
+        v-model="email"
+        validation="required|email"
+        placeholder="correo@ejemplo.com"
+        outerClass="flex flex-col gap-1"
+        labelClass="font-semibold text-warning"
+        inputClass="w-full px-3 py-2 rounded-md bg-base-100 shadow-sm focus:outline-none focus:ring-2 focus:ring-warning transition-all"
+      />
+
+      <!-- Contraseña -->
+      <FormKit
+        type="password"
+        name="password"
+        label="Contraseña"
+        v-model="password"
+        validation="required"
+        placeholder="•••••••••"
+        outerClass="flex flex-col gap-1"
+        labelClass="font-semibold text-warning"
+        inputClass="w-full px-3 py-2 rounded-md bg-base-100 shadow-sm focus:outline-none focus:ring-2 focus:ring-warning transition-all"
+      />
+
+      <!-- Botón -->
+      <button
+        type="submit"
+        class="btn btn-primary w-full mt-4 flex justify-center"
+        :disabled="loading"
+      >
+        <span v-if="loading" class="loading loading-spinner"></span>
+        <span v-else>Acceder</span>
+      </button>
+
+      <p v-if="error" class="text-error text-center mt-2">{{ error }}</p>
+    </FormKit>
+  </fieldset>
+      <figure
+        data-tip="Fuera de servicio!!!"
+        class="tooltip mt-10 flex items-center justify-end space-x-2 flex-row-reverse hover:text-base-context transition duration-300"
+      >
+        <img class="w-14 p-2 table:ml-0" src="/Group.png" />
+        <figcaption class="text-white">¿Necesita asistencia?</figcaption>
+      </figure>
     </section>
   </div>
 </template>

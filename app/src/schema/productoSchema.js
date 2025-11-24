@@ -64,11 +64,6 @@
       messagesClass: 'text-red-500'
     },
 
-    // Botón
-    // {
-    //   $formkit: 'submit',
-    //   label: 'Guardar',
-    //   inputClass: 'btn btn-primary btn-md mt-4'
-    // }
+
   ];
 

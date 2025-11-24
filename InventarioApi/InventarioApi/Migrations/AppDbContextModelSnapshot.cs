@@ -121,6 +121,10 @@ namespace InventarioApi.Migrations
                     b.Property<int>("Cantidad")
                         .HasColumnType("int");
 
+                    b.Property<string>("NombreProducto")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<decimal>("Precio")
                         .HasColumnType("decimal(18,2)");
 

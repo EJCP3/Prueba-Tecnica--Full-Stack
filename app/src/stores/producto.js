@@ -1,49 +1,33 @@
 import { defineStore } from "pinia";
-import { reactive } from "vue";
-import { useCrudStore } from "../composable/useCrudStore";
-
+import { ref } from "vue";
+import { useCrudApi } from "../composable/useCrudAPI";
 
 export const useProductoStore = defineStore("producto", () => {
-  const productos = reactive([
-    {
-      id:1,
-      nombre:"agua",
-      descripcion:"100ml",
-      precio:"20",
-      stock:"10"
-    },
-     {
-      id:2,
-      nombre:"cocoa",
-      descripcion:"lata",
-      precio:"30",
-      stock:"2"
-    },
-     {
-      id:3,
-      nombre:"leche",
-      descripcion:"semi",
-      precio:"50",
-      stock:"2"
-    },
-     {
-      id:4,
-      nombre:"galleta",
-      descripcion:"grande",
-      precio:"32",
-      stock:"4"
-    },
-    {
-      id:5,
-      nombre:"pan",
-      descripcion:"funda",
-      precio:"32",
-      stock:"4"
-    },
-  ]);
+  const productos = ref([]); // Lista reactiva de productos
 
-  const { addItem, deleteItem, editItem } = useCrudStore({ productos }, "productos");
-  
+  // Composable para operaciones CRUD y estados de carga/error
+  const {
+    fetchItems,
+    createItemApi,
+    updateItemApi,
+    deleteItemApi,
+    loading,
+    error,
+  } = useCrudApi({ productos });
 
-  return { productos ,addItem, deleteItem, editItem };
+  // Funciones listas para usar con la API y el store
+  const fetchProductos = () => fetchItems("Productos", "productos"); // Carga todos los productos
+  const addItem = (nuevoProducto) => createItemApi("Productos", "productos", nuevoProducto); // Agrega producto
+  const editItem = (productoId, datosActualizados) => updateItemApi("Productos", "productos", productoId, datosActualizados); // Edita producto
+  const deleteItem = (productoId) => deleteItemApi("Productos", "productos", productoId); // Elimina producto
+
+  return {
+    productos,
+    fetchProductos,
+    addItem,
+    editItem,
+    deleteItem,
+    loading,
+    error,
+  };
 });

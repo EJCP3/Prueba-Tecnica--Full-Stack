@@ -3,6 +3,7 @@ import { useProductoStore } from "../stores/producto";
 import { productoSchema } from "../schema/productoSchema";
 import { ref } from "vue";
 import { useCrudForm } from "../composable/useCrudForm";
+import { onMounted } from "vue";
 
 const productoStore = useProductoStore();
 const formRef = ref(null);
@@ -13,17 +14,15 @@ const producto = {
   precio: "",
   stock: "",
 };
-
+onMounted(() => {
+  productoStore.fetchProductos();
+});
 const { formData, editId, handleEdit, saveEdit, handleSubmit, handleRemove } =
-  useCrudForm(productoStore, producto, formRef, "productos");
-
-
-
+  useCrudForm(productoStore, producto, formRef);
 
 const onSubmit = (data) => {
   console.log(data);
   if (editId.value) {
-   
     saveEdit(data);
   } else {
     handleSubmit(data);
@@ -39,8 +38,9 @@ const onSubmit = (data) => {
     <h1 class="text-4xl text-center">Crear Productos</h1>
 
     <!-- Contenedor responsivo -->
-    <div class="flex flex-col w-full max-w-6xl gap-10 md:flex-row md:items-start">
-
+    <div
+      class="flex flex-col w-full max-w-6xl gap-10 md:flex-row md:items-start"
+    >
       <!-- FORMULARIO -->
       <fieldset
         class="fieldset bg-base-200 border-base-300 rounded-box w-full md:w-1/3 border p-4"
@@ -107,7 +107,6 @@ const onSubmit = (data) => {
           </tbody>
         </table>
       </div>
-
     </div>
   </section>
 </template>

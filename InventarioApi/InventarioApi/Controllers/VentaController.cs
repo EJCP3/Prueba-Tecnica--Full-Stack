@@ -98,31 +98,69 @@ namespace InventarioApi.Controllers
         // Solo admin puede crear ventas
         [HttpPost]
         [Authorize(Roles = "admin,user")]
-        public async Task<ActionResult> CrearVenta(VentaDto modelo)
+        //public async Task<ActionResult> CrearVenta(VentaDto modelo)
+        //{
+        //    var venta = new Ventas
+        //    {
+        //        Fecha = modelo.Fecha,
+        //        ClienteID = modelo.Cliente.Id,
+        //    };
+
+        //    foreach (var item in modelo.Detalles)
+        //    {
+        //        venta.Detalles.Add(new VentaDetalle
+        //        {
+        //            ProductoID = item.ProductoID,
+        //            Cantidad = item.Cantidad,
+        //            Precio = item.Precio
+        //        });
+        //    }
+
+        //    venta.Total = venta.Detalles.Sum(d => d.Cantidad * d.Precio);
+
+        //    _context.Ventas.Add(venta);
+        //    await _context.SaveChangesAsync();
+
+        //    return Ok(new { mensaje = "Venta creada correctamente", ventaID = venta.ID });
+        //}
+
+        public async Task<IActionResult> Crear([FromBody] VentaCreateDto modelo)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             var venta = new Ventas
             {
-                Fecha = modelo.Fecha,
-                ClienteID = modelo.Cliente.Id,
+                ClienteID = modelo.ClienteID,
+                Fecha = DateTime.Now,
+                Total = 0,
+                Detalles = new List<VentaDetalle>()
             };
 
             foreach (var item in modelo.Detalles)
             {
+                var producto = await _context.Productos.FindAsync(item.ProductoID);
+
+                if (producto == null)
+                    return BadRequest($"Producto {item.ProductoID} no existe.");
+
                 venta.Detalles.Add(new VentaDetalle
                 {
                     ProductoID = item.ProductoID,
                     Cantidad = item.Cantidad,
-                    Precio = item.Precio
+                    Precio = producto.Precio,
+                    NombreProducto = producto.Nombre // ✔ ahora sí existe
                 });
-            }
 
-            venta.Total = venta.Detalles.Sum(d => d.Cantidad * d.Precio);
+                venta.Total += producto.Precio * item.Cantidad;
+            }
 
             _context.Ventas.Add(venta);
             await _context.SaveChangesAsync();
 
-            return Ok(new { mensaje = "Venta creada correctamente", ventaID = venta.ID });
+            return Ok(venta.ID);
         }
+
 
         // DELETE: api/Ventas/5
         // Solo admin puede eliminar ventas

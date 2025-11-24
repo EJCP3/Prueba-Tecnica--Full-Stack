@@ -2,6 +2,13 @@
 import { useVentaStore } from "../stores/venta";
 const ventaStore = useVentaStore();
 const ventas = ventaStore.ventas;
+
+
+import { onMounted } from "vue";
+
+onMounted(() => {
+  ventaStore.fetchVentas();
+});
 </script>
 
 <template>
@@ -38,9 +45,9 @@ const ventas = ventaStore.ventas;
 
             <td class="whitespace-normal break-words">
               {{
-                (venta.listaProductos || [])
+                (venta.detalles || [])
                   .map(
-                    (p) => `${p.nombre} ($${p.precio} x ${p.cantidad})`
+                    (p) => `${p.nombreProducto} ($${p.precio} x ${p.cantidad})`
                   )
                   .join(", ")
               }}

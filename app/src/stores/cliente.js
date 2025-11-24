@@ -1,37 +1,33 @@
 import { defineStore } from "pinia";
-import { reactive } from "vue";
-import { useCrudStore } from "../composable/useCrudStore";
+import { ref } from "vue";
+import { useCrudApi } from "../composable/useCrudAPI";
 
-export const useClienteStore = defineStore("cliente", () => {
+export const useClienteStore = defineStore("clientes", () => {
+  const clientes = ref([]); // Lista reactiva de clientes
 
-const clientes = reactive([
-   {
-      id:1,
-      nombre:"pedro",
-      email:"pedro@gmail.com",
-      telefono:"8054569874"
-    
-    },
-      {
-      id:2,
-      nombre:"juan",
-      email:"juan@gmail.com",
-      telefono:"8054569874"
-    
-    },
-      {
-      id:1,
-      nombre:"perez",
-      email:"perez@gmail.com",
-      telefono:"8054569874"
-    
-    }
-]);
+  // Composable para manejar operaciones CRUD y estados de carga/error
+  const {
+    fetchItems,
+    createItemApi,
+    updateItemApi,
+    deleteItemApi,
+    loading,
+    error,
+  } = useCrudApi({ clientes });
 
-  const {addItem, deleteItem, editItem} = useCrudStore({clientes})
+  // Funciones preparadas para usar con la API y store
+  const fetchClientes = () => fetchItems("Clientes", "clientes"); // Carga todos los clientes
+  const addItem = (nuevoCliente) => createItemApi("Clientes", "clientes", nuevoCliente); // Agrega cliente
+  const editItem = (clienteId, datosActualizados) => updateItemApi("Clientes", "clientes", clienteId, datosActualizados); // Edita cliente
+  const deleteItem = (clienteId) => deleteItemApi("Clientes", "clientes", clienteId); // Elimina cliente
 
-
-
-  return { clientes, addItem, deleteItem,  editItem}
-
-})
+  return {
+    clientes,
+    fetchClientes,
+    addItem,
+    editItem,
+    deleteItem,
+    loading,
+    error,
+  };
+});

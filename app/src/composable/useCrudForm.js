@@ -1,38 +1,36 @@
 import { ref } from "vue";
-import { useCrudStore } from "./useCrudStore";
 
-export function useCrudForm(store, initialData, formRef, key) {
+export function useCrudForm(store, initialData, formRef) {
 
+  console.log(store, initialData, formRef) // Muestra los parámetros al iniciar
 
-  const editId = ref(null);
-  const formData = ref({ ...initialData });
+  const editId = ref(null); // Almacena el ID del elemento que se está editando
+  const formData = ref({ ...initialData }); // Datos reactivos del formulario
 
   const handleEdit = (item) => {
+    // Prepara el formulario para editar un elemento
     editId.value = item.id;
     formData.value = { ...item };
 
     if (formRef?.value?.node?.input) {
-      formRef.value.node.input({ ...item });
+      formRef.value.node.input({ ...item }); // Actualiza el form externo si existe
     }
   };
 
-  const saveEdit = (data) => {
-    store.editItem(editId.value, data, key);  // ← CORRECTO
-    editId.value = null;
+  const saveEdit = async (data) => {
+    // Guarda los cambios de edición en el store
+    await store.editItem(editId.value, data);
+    editId.value = null; // Resetea el ID de edición
   };
 
-  const handleSubmit = (data) => {
-    const newItem = {
-      id: Date.now(),
-      ...data,
-    };
-
-    store.addItem({ ...newItem }, key);       // ← CORRECTO
+  const handleSubmit = async (data) => {
+    // Agrega un nuevo elemento al store
+    await store.addItem(data);
   };
 
-  const handleRemove = (id) => {
-
-    store.deleteItem(id, key );                // ← CORRECTO
+  const handleRemove = async (id) => {
+    // Elimina un elemento del store
+    await store.deleteItem(id);
   };
 
   return {

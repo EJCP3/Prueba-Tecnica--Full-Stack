@@ -596,7 +596,7 @@
   },
   {
     "ContainingType": "InventarioApi.Controllers.VentasController",
-    "Method": "CrearVenta",
+    "Method": "Crear",
     "RelativePath": "api/Ventas",
     "HttpMethod": "POST",
     "IsController": true,
@@ -604,7 +604,7 @@
     "Parameters": [
       {
         "Name": "modelo",
-        "Type": "InventarioApi.DTOs.VentaDto",
+        "Type": "InventarioApi.DTOs.VentaCreateDto",
         "IsRequired": true
       }
     ],

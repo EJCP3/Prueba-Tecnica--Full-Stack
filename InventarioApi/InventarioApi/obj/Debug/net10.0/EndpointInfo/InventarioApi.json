@@ -997,17 +997,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/VentaDto"
+                "$ref": "#/components/schemas/VentaCreateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/VentaDto"
+                "$ref": "#/components/schemas/VentaCreateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/VentaDto"
+                "$ref": "#/components/schemas/VentaCreateDto"
               }
             }
           }
@@ -1217,6 +1217,23 @@
         },
         "additionalProperties": false
       },
+      "VentaCreateDto": {
+        "type": "object",
+        "properties": {
+          "clienteID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "detalles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VentaDetalleCreateDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "VentaDetallaDto": {
         "type": "object",
         "properties": {
@@ -1235,6 +1252,20 @@
           "precio": {
             "type": "number",
             "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "VentaDetalleCreateDto": {
+        "type": "object",
+        "properties": {
+          "productoID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

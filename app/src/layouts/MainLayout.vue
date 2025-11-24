@@ -2,6 +2,7 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
+import Footer from '../components/Footer.vue';
 
 const auth = useAuthStore();
 const router = useRouter();
@@ -11,7 +12,6 @@ const handleLogout = () => {
 };
   
 
-console.log(auth)
 </script>
 
 <template>
@@ -21,7 +21,7 @@ console.log(auth)
         <router-link to="/" class="btn btn-ghost text-xl md:text-2xl">Inventario</router-link>
       </div>
       <div class="flex  items-center">
-        <h3 class="mr-4">Hola, {{ auth.user?.nombre  }}, {{ auth.user?.rol }} </h3>
+        <h3 class="mr-4">Hola, {{ auth.user?.nombre  }}  </h3>
         <img
           src="/perfil.svg"
           alt="Avatar"
@@ -35,15 +35,6 @@ console.log(auth)
       <router-view />
     </main>
 
-    <footer
-      class="footer sm:footer-horizontal  text-neutral-content items-center p-4"
-    >
-      <figure data-tip="Fuera de servicio!!!"
-        class=" tooltip  ml-auto flex items-center justify-center space-x-2 flex-row-reverse"
-      >
-        <img class=" w-14  p-2 table:ml-0" src="/Group.png" />
-        <figcaption class="text-white">¿Necesita asistencia?</figcaption>
-      </figure>
-    </footer>
+  <Footer />
   </div>
 </template>

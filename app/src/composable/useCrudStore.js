@@ -1,23 +1,23 @@
 export function useCrudStore(store) {
-
+  // Agrega un nuevo elemento al array del store
   const addItem = (item, key) => {
-    store[key].push({ ...item });
+    store[key].value.push({ ...item });
   };
 
- const deleteItem = (id, key) => {
-  const index = store[key].findIndex(x => x.id === id);
-  if (index !== -1) {
-    store[key].splice(index, 1);
-  }
-};
-
-  const editItem = (id, data, key) => {
-    console.log(id);
-
-    const index = store[key].findIndex((x) => x.id === id);
+  // Elimina un elemento del array por su ID
+  const deleteItem = (id, key) => {
+    const index = store[key].value.findIndex((item) => item.id === id);
     if (index !== -1) {
-      store[key][index] = {
-        ...store[key][index],
+      store[key].value.splice(index, 1);
+    }
+  };
+
+  // Edita un elemento existente por su ID
+  const editItem = (id, data, key) => {
+    const index = store[key].value.findIndex((item) => item.id === id);
+    if (index !== -1) {
+      store[key].value[index] = {
+        ...store[key].value[index],
         ...data,
       };
     }

@@ -1,12 +1,12 @@
 <script setup>
 import { clienteSchema } from "../schema/clienteSchema";
 import { useClienteStore } from "../stores/cliente";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useCrudForm } from "../composable/useCrudForm";
+
+import { useAuthStore } from "../stores/auth";
 const clienteStore = useClienteStore();
-
-
-
+const auth = useAuthStore();
 const formRef = ref(null);
 
 const cliente = {
@@ -15,17 +15,20 @@ const cliente = {
   telefono: "",
 };
 
-const { formData, editId, handleEdit, saveEdit, handleSubmit, handleRemove } =
-  useCrudForm(clienteStore, cliente, formRef, "clientes");
+const { editId, handleEdit, saveEdit, handleSubmit, handleRemove } =
+  useCrudForm(clienteStore, cliente, formRef);
 
-const onSubmit = (data) => {
-  
-  console.log(data);
+onMounted(() => {
+  clienteStore.fetchClientes();
+});
+
+const onSubmit = async (data) => {
   if (editId.value) {
-    saveEdit(data);
+    await saveEdit(data);
   } else {
-    handleSubmit(data);
+    await handleSubmit(data);
   }
+
   formRef.value.node.reset();
 };
 </script>
@@ -50,7 +53,6 @@ const onSubmit = (data) => {
         ref="formRef"
         id="myForm"
         type="form"
-       
         @submit="onSubmit"
         :actions="false"
       >
@@ -64,8 +66,6 @@ const onSubmit = (data) => {
       </FormKit>
     </fieldset>
 
-  
-
     <!-- TABLA -->
     <div
       class="overflow-x-auto rounded-xl border border-base-content/10 bg-base-100 w-full max-w-4xl shadow"
@@ -77,7 +77,7 @@ const onSubmit = (data) => {
             <th>Nombre</th>
             <th>Email</th>
             <th>Telefono</th>
-            <th>Acciones</th>
+            <th v-if="auth.user?.rol === 'admin'">Acciones</th>
           </tr>
         </thead>
 
@@ -92,7 +92,7 @@ const onSubmit = (data) => {
             <td>{{ cliente.email }}</td>
             <td>{{ cliente.telefono }}</td>
 
-            <td class="flex gap-2">
+            <td class="flex gap-2" v-if="auth.user?.rol === 'admin'">
               <button class="btn btn-sm btn-info" @click="handleEdit(cliente)">
                 Editar
               </button>
