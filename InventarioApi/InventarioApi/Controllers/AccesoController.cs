@@ -57,20 +57,20 @@ namespace InventarioApi.Controllers
 
         // POST: api/Acceso/Login
         [AllowAnonymous]
-        [HttpPost("Login")]
+        [HttpPost("Login")] 
         public async Task<IActionResult> Login([FromBody] UsuarioDto dto)
         {
             if (string.IsNullOrWhiteSpace(dto.Email) || string.IsNullOrWhiteSpace(dto.Password))
                 throw new ValidationException("Email y contraseña son obligatorios.");
 
             var usuario = await _context.Usuarios
-                .FirstOrDefaultAsync(u =>
-                    u.Email == dto.Email &&
-                    u.PasswordHash == _ultidades.encriptarSHA256(dto.Password)
-                );
+     .FirstOrDefaultAsync(u => u.Email == dto.Email);
 
             if (usuario == null)
                 throw new BadRequestException("Credenciales incorrectas.");
+
+            if (usuario.PasswordHash != _ultidades.encriptarSHA256(dto.Password))
+                throw new BadRequestException("Credenciales incorrectas."); 
 
             var token = _ultidades.generarJwt(usuario);
 
