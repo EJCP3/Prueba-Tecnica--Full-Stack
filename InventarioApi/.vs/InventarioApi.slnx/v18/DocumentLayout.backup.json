@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|c:\\users\\euddy\\desktop\\pruebatecnica\\inventarioapi\\inventarioapi\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|solutionrelative:inventarioapi\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|c:\\users\\euddy\\desktop\\pruebatecnica\\inventarioapi\\inventarioapi\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|solutionrelative:inventarioapi\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|c:\\users\\euddy\\desktop\\pruebatecnica\\inventarioapi\\inventarioapi\\controllers\\ventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|solutionrelative:inventarioapi\\controllers\\ventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -47,10 +55,6 @@
       "RelativeMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|solutionrelative:inventarioapi\\dtos\\newusuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|c:\\users\\euddy\\desktop\\pruebatecnica\\inventarioapi\\inventarioapi\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|solutionrelative:inventarioapi\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|c:\\users\\euddy\\desktop\\pruebatecnica\\inventarioapi\\inventarioapi\\custom\\ultidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|solutionrelative:inventarioapi\\custom\\ultidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -61,10 +65,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|c:\\users\\euddy\\desktop\\pruebatecnica\\inventarioapi\\inventarioapi\\inventarioapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
       "RelativeMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|solutionrelative:inventarioapi\\inventarioapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|c:\\users\\euddy\\desktop\\pruebatecnica\\inventarioapi\\inventarioapi\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|solutionrelative:inventarioapi\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{54E15514-C6E7-100E-1018-4DF899CF1270}|InventarioApi\\InventarioApi.csproj|c:\\users\\euddy\\desktop\\pruebatecnica\\inventarioapi\\inventarioapi\\migrations\\20251123033044_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -78,41 +78,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "20251123224512_AddNombreProductoToVentaDetalle.cs",
-              "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Migrations\\20251123224512_AddNombreProductoToVentaDetalle.cs",
-              "RelativeDocumentMoniker": "InventarioApi\\Migrations\\20251123224512_AddNombreProductoToVentaDetalle.cs",
-              "ToolTip": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Migrations\\20251123224512_AddNombreProductoToVentaDetalle.cs",
-              "RelativeToolTip": "InventarioApi\\Migrations\\20251123224512_AddNombreProductoToVentaDetalle.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T22:45:13.611Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Ventas.cs",
-              "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Models\\Ventas.cs",
-              "RelativeDocumentMoniker": "InventarioApi\\Models\\Ventas.cs",
-              "ToolTip": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Models\\Ventas.cs",
-              "RelativeToolTip": "InventarioApi\\Models\\Ventas.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T22:26:35.548Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "VentaDetalle.cs",
               "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Models\\VentaDetalle.cs",
               "RelativeDocumentMoniker": "InventarioApi\\Models\\VentaDetalle.cs",
@@ -125,7 +95,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "VentaDetallaDto.cs",
               "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\DTOs\\VentaDetallaDto.cs",
               "RelativeDocumentMoniker": "InventarioApi\\DTOs\\VentaDetallaDto.cs",
@@ -138,12 +108,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "VentaController.cs",
               "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Controllers\\VentaController.cs",
               "RelativeDocumentMoniker": "InventarioApi\\Controllers\\VentaController.cs",
-              "ToolTip": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Controllers\\VentaController.cs*",
-              "RelativeToolTip": "InventarioApi\\Controllers\\VentaController.cs*",
+              "ToolTip": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Controllers\\VentaController.cs",
+              "RelativeToolTip": "InventarioApi\\Controllers\\VentaController.cs",
               "ViewState": "AgIAAI8AAAAAAAAAAAApwKEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-23T21:42:22.871Z",
@@ -151,7 +121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Context\\AppDbContext.cs",
               "RelativeDocumentMoniker": "InventarioApi\\Context\\AppDbContext.cs",
@@ -164,7 +134,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
+              "Title": "AccesoController.cs",
+              "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Controllers\\AccesoController.cs",
+              "RelativeDocumentMoniker": "InventarioApi\\Controllers\\AccesoController.cs",
+              "ToolTip": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Controllers\\AccesoController.cs",
+              "RelativeToolTip": "InventarioApi\\Controllers\\AccesoController.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAIAwwEgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T03:39:02.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "VentaDto.cs",
               "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\DTOs\\VentaDto.cs",
               "RelativeDocumentMoniker": "InventarioApi\\DTOs\\VentaDto.cs",
@@ -177,7 +164,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "InventarioApi\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Models\\Usuario.cs",
+              "RelativeToolTip": "InventarioApi\\Models\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T03:38:18.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Ventas.cs",
+              "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Models\\Ventas.cs",
+              "RelativeDocumentMoniker": "InventarioApi\\Models\\Ventas.cs",
+              "ToolTip": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Models\\Ventas.cs",
+              "RelativeToolTip": "InventarioApi\\Models\\Ventas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T22:26:35.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "20251123224512_AddNombreProductoToVentaDetalle.cs",
+              "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Migrations\\20251123224512_AddNombreProductoToVentaDetalle.cs",
+              "RelativeDocumentMoniker": "InventarioApi\\Migrations\\20251123224512_AddNombreProductoToVentaDetalle.cs",
+              "ToolTip": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Migrations\\20251123224512_AddNombreProductoToVentaDetalle.cs",
+              "RelativeToolTip": "InventarioApi\\Migrations\\20251123224512_AddNombreProductoToVentaDetalle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T22:45:13.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "VentaDetalleCreateDto.cs",
               "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\DTOs\\VentaDetalleCreateDto.cs",
               "RelativeDocumentMoniker": "InventarioApi\\DTOs\\VentaDetalleCreateDto.cs",
@@ -190,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "CrearVentaDto.cs",
               "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\DTOs\\CrearVentaDto.cs",
               "RelativeDocumentMoniker": "InventarioApi\\DTOs\\CrearVentaDto.cs",
@@ -203,7 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "ClientesController.cs",
               "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Controllers\\ClientesController.cs",
               "RelativeDocumentMoniker": "InventarioApi\\Controllers\\ClientesController.cs",
@@ -216,7 +242,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Ultidades.cs",
               "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Custom\\Ultidades.cs",
               "RelativeDocumentMoniker": "InventarioApi\\Custom\\Ultidades.cs",
@@ -229,7 +255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "InventarioApi.http",
               "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\InventarioApi.http",
               "RelativeDocumentMoniker": "InventarioApi\\InventarioApi.http",
@@ -242,20 +268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AccesoController.cs",
-              "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Controllers\\AccesoController.cs",
-              "RelativeDocumentMoniker": "InventarioApi\\Controllers\\AccesoController.cs",
-              "ToolTip": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Controllers\\AccesoController.cs",
-              "RelativeToolTip": "InventarioApi\\Controllers\\AccesoController.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAvwEYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T03:39:02.249Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "NewUsuarioDTO.cs",
               "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\DTOs\\NewUsuarioDTO.cs",
               "RelativeDocumentMoniker": "InventarioApi\\DTOs\\NewUsuarioDTO.cs",
@@ -268,7 +281,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Program.cs",
               "RelativeDocumentMoniker": "InventarioApi\\Program.cs",
@@ -278,18 +291,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-23T14:57:46.611Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Models\\Usuario.cs",
-              "RelativeDocumentMoniker": "InventarioApi\\Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Models\\Usuario.cs",
-              "RelativeToolTip": "InventarioApi\\Models\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T03:38:18.627Z"
             },
             {
               "$type": "Document",

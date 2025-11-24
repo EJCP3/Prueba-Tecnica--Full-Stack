@@ -4,9 +4,11 @@ import { productoSchema } from "../schema/productoSchema";
 import { ref } from "vue";
 import { useCrudForm } from "../composable/useCrudForm";
 import { onMounted } from "vue";
+import { useAuthStore } from "../stores/auth";
 
 const productoStore = useProductoStore();
 const formRef = ref(null);
+const auth = useAuthStore();
 
 const producto = {
   nombre: "",
@@ -76,7 +78,7 @@ const onSubmit = (data) => {
               <th>Descripción</th>
               <th>Precio</th>
               <th>Stock</th>
-              <th>Acciones</th>
+            <th v-if="auth.user?.rol === 'admin'">Acciones</th>
             </tr>
           </thead>
 
@@ -88,7 +90,7 @@ const onSubmit = (data) => {
               <td>${{ producto.precio }}</td>
               <td>{{ producto.stock }}</td>
 
-              <td class="flex flex-col gap-2 md:flex-row">
+              <td class="flex flex-col gap-2 md:flex-row" v-if="auth.user?.rol === 'admin'">
                 <button
                   class="btn btn-sm btn-info w-full md:w-auto"
                   @click="handleEdit(producto)"

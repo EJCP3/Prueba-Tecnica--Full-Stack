@@ -90,8 +90,7 @@
               "RelativeToolTip": "InventarioApi\\Models\\VentaDetalle.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T22:26:01.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T22:26:01.034Z"
             },
             {
               "$type": "Document",
@@ -103,8 +102,7 @@
               "RelativeToolTip": "InventarioApi\\DTOs\\VentaDetallaDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T21:44:10.526Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T21:44:10.526Z"
             },
             {
               "$type": "Document",
@@ -116,8 +114,7 @@
               "RelativeToolTip": "InventarioApi\\Controllers\\VentaController.cs",
               "ViewState": "AgIAAI8AAAAAAAAAAAApwKEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T21:42:22.871Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T21:42:22.871Z"
             },
             {
               "$type": "Document",
@@ -129,8 +126,7 @@
               "RelativeToolTip": "InventarioApi\\Context\\AppDbContext.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAIA1wB0AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T22:35:05.422Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T22:35:05.422Z"
             },
             {
               "$type": "Document",
@@ -140,14 +136,10 @@
               "RelativeDocumentMoniker": "InventarioApi\\Controllers\\AccesoController.cs",
               "ToolTip": "C:\\Users\\euddy\\Desktop\\PruebaTecnica\\InventarioApi\\InventarioApi\\Controllers\\AccesoController.cs",
               "RelativeToolTip": "InventarioApi\\Controllers\\AccesoController.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAIAwwEgAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-23T03:39:02.249Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             },
             {
               "$type": "Document",
@@ -159,8 +151,7 @@
               "RelativeToolTip": "InventarioApi\\DTOs\\VentaDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T21:44:19.526Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T21:44:19.526Z"
             },
             {
               "$type": "Document",
@@ -172,8 +163,7 @@
               "RelativeToolTip": "InventarioApi\\Models\\Usuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T03:38:18.627Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T03:38:18.627Z"
             },
             {
               "$type": "Document",
@@ -185,8 +175,7 @@
               "RelativeToolTip": "InventarioApi\\Models\\Ventas.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T22:26:35.548Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T22:26:35.548Z"
             },
             {
               "$type": "Document",
@@ -198,8 +187,7 @@
               "RelativeToolTip": "InventarioApi\\Migrations\\20251123224512_AddNombreProductoToVentaDetalle.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T22:45:13.611Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T22:45:13.611Z"
             },
             {
               "$type": "Document",
@@ -211,8 +199,7 @@
               "RelativeToolTip": "InventarioApi\\DTOs\\VentaDetalleCreateDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T22:33:51.665Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T22:33:51.665Z"
             },
             {
               "$type": "Document",
@@ -224,8 +211,7 @@
               "RelativeToolTip": "InventarioApi\\DTOs\\CrearVentaDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T21:42:13.439Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T21:42:13.439Z"
             },
             {
               "$type": "Document",
@@ -237,8 +223,7 @@
               "RelativeToolTip": "InventarioApi\\Controllers\\ClientesController.cs",
               "ViewState": "AgIAAFkAAAAAAAAAAAAIwGYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T15:20:11.917Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T15:20:11.917Z"
             },
             {
               "$type": "Document",
@@ -250,8 +235,7 @@
               "RelativeToolTip": "InventarioApi\\Custom\\Ultidades.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T15:25:25.422Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T15:25:25.422Z"
             },
             {
               "$type": "Document",
@@ -263,8 +247,7 @@
               "RelativeToolTip": "InventarioApi\\InventarioApi.http",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-11-23T14:57:42.831Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T14:57:42.831Z"
             },
             {
               "$type": "Document",
@@ -276,8 +259,7 @@
               "RelativeToolTip": "InventarioApi\\DTOs\\NewUsuarioDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T03:38:30.91Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T03:38:30.91Z"
             },
             {
               "$type": "Document",
@@ -289,8 +271,7 @@
               "RelativeToolTip": "InventarioApi\\Program.cs",
               "ViewState": "AgIAADsAAAAAAAAAAAAUwGEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T14:57:46.611Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T14:57:46.611Z"
             },
             {
               "$type": "Document",
@@ -303,6 +284,10 @@
               "ViewState": "AgIAAHwAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-23T03:30:45.588Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             }
           ]
         }
