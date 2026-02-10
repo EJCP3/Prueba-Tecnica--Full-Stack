@@ -1,0 +1,23 @@
+# --- Frontend (Vue/Vite) ---
+app/node_modules/
+app/dist/
+app/dist-ssr/
+app/.env*
+app/*.local
+
+# --- Backend (.NET / C#) ---
+**/[Bb]in/
+**/[Oo]bj/
+**/.vs/
+**/*.user
+**/*.userosscache
+**/*.sln.docstates
+**/*.suo
+
+# --- Logs y Editores ---
+*.log
+logs
+.vscode/
+!.vscode/extensions.json
+.idea/
+.DS_Store
