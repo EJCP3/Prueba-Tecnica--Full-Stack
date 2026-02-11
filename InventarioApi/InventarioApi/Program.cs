@@ -13,7 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 // 🔹 CONFIGURACIÓN GENERAL
 // =========================
 
-var connectionString = builder.Configuration.GetConnectionString("Connection");
+var connectionString = builder.Configuration.GetConnectionString("ConnectionStrings__Connection");
 
 // DbContext
 builder.Services.AddDbContext<AppDbContext>(options =>
