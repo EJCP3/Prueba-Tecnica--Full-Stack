@@ -1,18 +1,18 @@
 # Etapa de compilación
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["InventarioApi/InventarioApi.csproj", "InventarioApi/"]
-RUN dotnet restore "InventarioApi/InventarioApi.csproj"
+
+# Buscamos el archivo .csproj de forma recursiva para no fallar por rutas
 COPY . .
-WORKDIR "/src/InventarioApi"
-RUN dotnet build "InventarioApi.csproj" -c Release -o /app/build
+RUN dotnet restore
 
-# Etapa de publicación
-FROM build AS publish
-RUN dotnet publish "InventarioApi.csproj" -c Release -o /app/publish
+# Publicamos el proyecto
+RUN dotnet publish -c Release -o /app/publish
 
-# Etapa final (ejecución)
+# Etapa final de ejecución
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build /app/publish .
+
+# Asegúrate de que el nombre del .dll sea exactamente este
 ENTRYPOINT ["dotnet", "InventarioApi.dll"]
