@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 var builder = WebApplication.CreateBuilder(args);
 
 // =========================
@@ -16,7 +17,8 @@ var connectionString = builder.Configuration.GetConnectionString("Connection");
 
 // DbContext
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(connectionString)
+    options.UseNpgsql(connectionString)
+    .UseSnakeCaseNamingConvention()
 );
 
 // CORS
@@ -81,11 +83,12 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 app.UseMiddleware<ErrorHandlerMiddleware>();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI(c => {
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Inventario API V1");
+    c.RoutePrefix = string.Empty; // Esto hará que Swagger cargue en la raíz (opcional)
+});
+
 
 app.UseCors("NewPolicy");
 app.UseHttpsRedirection();
