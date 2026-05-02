@@ -13,7 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 // 🔹 CONFIGURACIÓN GENERAL
 // =========================
 
-var connectionString = builder.Configuration.GetConnectionString("ConnectionStrings__Connection");
+var connectionString = builder.Configuration.GetConnectionString("Connection");
 
 // DbContext
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -83,11 +83,12 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 app.UseMiddleware<ErrorHandlerMiddleware>();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI(c => {
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Inventario API V1");
+    c.RoutePrefix = string.Empty; // Esto hará que Swagger cargue en la raíz (opcional)
+});
+
 
 app.UseCors("NewPolicy");
 app.UseHttpsRedirection();
