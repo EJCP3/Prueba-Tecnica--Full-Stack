@@ -22,3 +22,4 @@ logs
 !.vscode/extensions.json
 .idea/
 .DS_Store
+/InventarioApi/myinventario.runasp.net-WebDeploy.publishSettings
