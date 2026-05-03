@@ -6,4 +6,13 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue(), tailwindcss(),],
+  server: {
+    proxy: {
+      '/api-proxy': {
+        target: 'http://myinventario.runasp.net/api',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api-proxy/, ''),
+      },
+    },
+  },
 })
