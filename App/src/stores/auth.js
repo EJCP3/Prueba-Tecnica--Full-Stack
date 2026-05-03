@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import axios from "axios";
+import API from "../axios";
 import { jwtDecode } from "jwt-decode";
 import { useRouter } from "vue-router";
 
@@ -13,8 +13,8 @@ export const useAuthStore = defineStore("auth", {
     async login(nombreUsuario, emailUsuario, passwordUsuario) {
       // Realiza login y guarda token y datos del usuario
       try {
-        const respuesta = await axios.post(
-          "http://myinventario.runasp.net/api/Acceso/Login",
+        const respuesta = await API.post(
+          "/Acceso/Login",
           {
             nombre: nombreUsuario,
             email: emailUsuario,
