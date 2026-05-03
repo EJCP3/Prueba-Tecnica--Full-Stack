@@ -204,7 +204,7 @@ const loginWithUser = async (user) => {
         class="tooltip mt-12 flex items-center justify-end space-x-2 flex-row-reverse text-white/60 hover:text-warning transition duration-300 cursor-help"
       >
         <img class="w-12 p-2 opacity-80" src="/Group.png" />
-        <figcaption class="text-xs font-medium">¿Necesita asistencia?</figcaption>
+        <figcaption class="text-xs font-medium">¿Necesita asistencia? <br> aqui no es lugar correcto</figcaption>
       </figure> 
     </section>
   </div>
