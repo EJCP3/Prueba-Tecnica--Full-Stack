@@ -14,7 +14,7 @@ export const useAuthStore = defineStore("auth", {
       // Realiza login y guarda token y datos del usuario
       try {
         const respuesta = await axios.post(
-          "http://localhost:5245/api/Acceso/Login",
+          "http://myinventario.runasp.net/api/Acceso/Login",
           {
             nombre: nombreUsuario,
             email: emailUsuario,

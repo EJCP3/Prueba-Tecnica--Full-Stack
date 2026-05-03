@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5245/api",
+  baseURL: "http://myinventario.runasp.net/api",
 });
 
 // Interceptor para enviar el token
